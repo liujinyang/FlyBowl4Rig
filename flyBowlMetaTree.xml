@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flyBowl>
+    <assay appear_advanced="true" appear_basic="true, readonly"
+        datatype="string" default="$LAST" description="Name of assay"
+        entry="manual" last="flybowlRig0" range_advanced=""
+        range_basic="" required="true" units=""/>
+    <experimenter appear_advanced="true" appear_basic="true"
+        datatype="string" default="$LAST"
+        description="Name of the person who is running the experiment."
+        entry="manual" last="Katie" range_advanced="Katie"
+        range_basic="Katie" required="true" units=""/>
+    <load_datetime appear_advanced="true" appear_basic="true"
+        datatype="datetime" default=""
+        description="Date and time at which the flies were loaded."
+        entry="acquire" last="" range_advanced="" range_basic=""
+        required="true" units=""/>
+    <exp_datetime appear_advanced="true" appear_basic="true"
+        datatype="datetime" default=""
+        description="Date and time at which the experiment was started."
+        entry="acquire" last="" range_advanced="" range_basic=""
+        required="true" units=""/>
+    <apparatus>
+        <room appear_advanced="true, readonly"
+            appear_basic="true, readonly" datatype="string"
+            default="$LAST" description="Room number" entry="manual"
+            last="3E.288" range_advanced="" range_basic=""
+            required="true" units=""/>
+    </apparatus>
+    <flies>
+        <male_parent1_unclipped appear_advanced="true"
+            appear_basic="true" datatype="string" default="$LAST"
+            description="Verified as legal male parent name in SAGE."
+            entry="manual" last="rubin" range_advanced="$FLYPARENT"
+            range_basic="$FLYPARENT" required="true" units=""/>
+        <female_parent1_unclipped appear_advanced="true"
+            appear_basic="true, readonly" datatype="string"
+            default="$LAST"
+            description="Verified as legal female parent name in SAGE."
+            entry="manual" last="2135005" range_advanced="$FLYPARENT"
+            range_basic="$FLYPARENT" required="true" units=""/>
+        <male_parent1_clipped appear_advanced="true" appear_basic="true"
+            datatype="string" default="$LAST"
+            description="Verified as legal male parent name in SAGE."
+            entry="manual" last="GMR_87B02_AV_01"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <female_parent1_clipped appear_advanced="true"
+            appear_basic="true, readonly" datatype="string"
+            default="$LAST"
+            description="Verified as legal female parent name in SAGE."
+            entry="manual" last="TL_elav_3" range_advanced="$FLYPARENT"
+            range_basic="$FLYPARENT" required="true" units=""/>
+        <male_parent2_unclipped appear_advanced="true"
+            appear_basic="true" datatype="string" default="$LAST"
+            description="Verified as legal male parent name in SAGE."
+            entry="manual" last="GMR_44H01_LJ_21"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <female_parent2_unclipped appear_advanced="true"
+            appear_basic="true, readonly" datatype="string"
+            default="$LAST"
+            description="Verified as legal female parent name in SAGE."
+            entry="manual" last="1xDSCPLwt_attp40_3stop1"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <male_parent2_clipped appear_advanced="true" appear_basic="true"
+            datatype="string" default="$LAST"
+            description="Verified as legal male parent name in SAGE."
+            entry="manual" last="1xLwt_attp40_4stop1"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <female_parent2_clipped appear_advanced="true"
+            appear_basic="true, readonly" datatype="string"
+            default="$LAST"
+            description="Verified as legal female parent name in SAGE."
+            entry="manual" last="w_UAS-mCD8-GFP_atoGal4-14a_UAS-LacZ"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <male_parent3_unclipped appear_advanced="true"
+            appear_basic="true" datatype="string" default="$LAST"
+            description="Verified as legal male parent name in SAGE."
+            entry="manual" last="GMR_69A04_AE_01"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <female_parent3_unclipped appear_advanced="true"
+            appear_basic="true, readonly" datatype="string"
+            default="$LAST"
+            description="Verified as legal female parent name in SAGE."
+            entry="manual" last="GMR_83G06_AE_01"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <male_parent3_clipped appear_advanced="true" appear_basic="true"
+            datatype="string" default="$LAST"
+            description="Verified as legal male parent name in SAGE."
+            entry="manual" last="EXT_NP3062-GAL4"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <female_parent3_clipped appear_advanced="true"
+            appear_basic="true, readonly" datatype="string"
+            default="$LAST"
+            description="Verified as legal female parent name in SAGE."
+            entry="manual" last="BB_fru_NP31_3"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <male_parent4_unclipped appear_advanced="true"
+            appear_basic="true" datatype="string" default="$LAST"
+            description="Verified as legal male parent name in SAGE."
+            entry="manual" last="EXT_Ddc-GAL4"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <female_parent4_unclipped appear_advanced="true"
+            appear_basic="true, readonly" datatype="string"
+            default="$LAST"
+            description="Verified as legal female parent name in SAGE."
+            entry="manual" last="18F09_BB_04"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <male_parent4_clipped appear_advanced="true" appear_basic="true"
+            datatype="string" default="$LAST"
+            description="Verified as legal male parent name in SAGE."
+            entry="manual" last="EXT_nompC-GAL4"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <female_parent4_clipped appear_advanced="true"
+            appear_basic="true, readonly" datatype="string"
+            default="$LAST"
+            description="Verified as legal female parent name in SAGE."
+            entry="manual" last="GMR_10A11_BB_21"
+            range_advanced="$FLYPARENT" range_basic="$FLYPARENT"
+            required="true" units=""/>
+        <genotype>
+            <content appear_advanced="true" appear_basic="true"
+                datatype="string" default="$LAST"
+                description="Genotype of flies. Typically auto-generated from male parent and female parent."
+                entry="manual" last="" range_advanced="" range_basic=""
+                required="true" units=""/>
+        </genotype>
+        <flip_used appear_advanced="true" appear_basic="true"
+            datatype="string" default="$LAST"
+            description="How many times the flies were flipped."
+            entry="manual" last="0" range_advanced="0,1,2,3"
+            range_basic="0,1,2,3" required="true" units=""/>
+        <gender appear_advanced="true" appear_basic="true, readonly"
+            datatype="string" default="$LAST"
+            description="The gender or genders of the flies. m=male, f=female, b=both, x=unknown"
+            entry="manual" last="f" range_advanced="m,f,b,x"
+            range_basic="m,f,b,x" required="true" units=""/>
+        <cross_date appear_advanced="true" appear_basic="true"
+            datatype="datetime" default="$LAST"
+            description="Date cross was made to generate this set of flies."
+            entry="manual" last="20190311T000000"
+            range_advanced="[now-35,now-20], days"
+            range_basic="[now-35,now-20], days" required="true" units=""/>
+        <num_flies appear_advanced="true" appear_basic="true"
+            datatype="integer" default="$LAST"
+            description="Number of flies actually put into apparatus for this experiment; may be different from protocol number of flies intended for the experiment."
+            entry="manual" last="20" range_advanced="[11,30]"
+            range_basic="[11,30]" required="true" units="flies"/>
+        <rearing>
+            <incubator appear_advanced="true" appear_basic="true"
+                datatype="string" default="$LAST"
+                description="ID number for incubator flies were raised in."
+                entry="manual" last="O"
+                range_advanced="A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"
+                range_basic="A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"
+                required="true" units=""/>
+        </rearing>
+        <handling>
+            <handler_cross appear_advanced="true" appear_basic="true"
+                datatype="string" default="$LAST"
+                description="Name of the person who handled the fly crossing."
+                entry="manual" last="Teri"
+                range_advanced="Ming, Billy, Teri, Yoshi"
+                range_basic="Ming, Billy, Teri, Yoshi" required="true" units=""/>
+            <handler_sorting appear_advanced="true" appear_basic="true"
+                datatype="string" default="$LAST"
+                description="Name of the person who handled the fly sorting."
+                entry="manual" last="Teri"
+                range_advanced="Ming, Billy, Teri, Yoshi"
+                range_basic="Ming, Billy, Teri, Yoshi" required="true" units=""/>
+            <datetime_sorted appear_advanced="true" appear_basic="true"
+                datatype="datetime" default="$LAST"
+                description="Date at the flies were sorted."
+                entry="manual" last="20190311T000000"
+                range_advanced="[now-35,now-20], days"
+                range_basic="[now-35,now-20], days" required="true" units=""/>
+            <cross_food appear_advanced="true" appear_basic="true"
+                datatype="string" default="$LAST"
+                description="cross food" entry="manual" last="1_500"
+                range_advanced="0,1_1000,1_500,1_250"
+                range_basic="0,1_1000,1_500,1_250" required="true" units=""/>
+            <sort_food appear_advanced="true" appear_basic="true"
+                datatype="string" default="$LAST"
+                description="sort food" entry="manual" last="1_250"
+                range_advanced="0,1_1000,1_500,1_250"
+                range_basic="0,1_1000,1_500,1_250" required="true" units=""/>
+        </handling>
+    </flies>
+    <environment>
+        <IR_intensity appear_advanced="true" appear_basic="true"
+            datatype="integer" default="$LAST"
+            description="IR intensity" entry="manual" last="4"
+            range_advanced="[0,100]" range_basic="[0,100]"
+            required="true" units=""/>
+        <temperature appear_advanced="true" appear_basic="true"
+            datatype="float" default=""
+            description="Temperature snapshot at the time the assay was started."
+            entry="acquire" last="" range_advanced="[-Inf, Inf]"
+            range_basic="[-Inf, Inf]" required="true" units="degrees Celsius"/>
+        <humidity appear_advanced="true" appear_basic="true"
+            datatype="float" default=""
+            description="Humidity snapshot at the time the assay was started."
+            entry="acquire" last="" range_advanced="[0,100]"
+            range_basic="[0,100]" required="true" units="percent"/>
+    </environment>
+</flyBowl>
