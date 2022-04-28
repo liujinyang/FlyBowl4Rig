@@ -562,6 +562,9 @@ if button_state == get(hObject,'Max')
     set(handles.select_rear_protocol, 'enable', 'off');
     set(handles.select_exp_protocol, 'enable', 'off');
     set(handles.load_flies_btn1, 'enable', 'off');
+    set(handles.load_flies_btn2, 'enable', 'off');
+    set(handles.load_flies_btn3, 'enable', 'off');
+    set(handles.load_flies_btn4, 'enable', 'off');
     currentDate = datestr(now, 29);
     tempPath1 = [handles.expDataDir, '\', currentDate];
     if ~exist(tempPath1, 'dir')
@@ -617,7 +620,10 @@ if button_state == get(hObject,'Max')
     
     tabgp = uitabgroup(handles.figMetaData,'Position',[0 0 1 1]);
     tab(1) = uitab(tabgp,'Title','flyBowl1');
-    
+    tab(2) = uitab(tabgp,'Title','flyBowl2');
+    tab(3) = uitab(tabgp,'Title','flyBowl3');
+    tab(4) = uitab(tabgp,'Title','flyBowl4');
+
     for i = 1:4
         % Create JIDE PropertyGrid and display defaults data in figure
         pgrid = PropertyGrid(tab(i),'Position', [0 0 1 1]);
@@ -1325,7 +1331,7 @@ end
 
 function metaData_closereq(src, eventdata, hFig)
 handles = guidata(hFig);
-for i = 1:1
+for i = 1:4
     if ~(handles.hComm.flea3{i} == 0) && handles.hComm.flea3IsActive(i)
         %save the meta data file
         handles.defaultsTree(i).setValueByUniquePath({'experiment','flag_aborted','content'},num2str(handles.flagAborted));
