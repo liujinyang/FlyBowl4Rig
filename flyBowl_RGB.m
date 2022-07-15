@@ -405,7 +405,8 @@ stepStartPnt = 1;
 
 %calculate the four point value for each step
 for stepIndex = 1:length(handles.protocol.stepNum)   
-    oneStep(stepIndex).NumStep = handles.protocol.stepNum(stepIndex);
+    %oneStep(stepIndex).NumStep = handles.protocol.stepNum(stepIndex);
+    oneStep(stepIndex).NumStep = stepIndex; 
     oneStep(stepIndex).Duration = handles.protocol.duration(stepIndex)/1000;  %in seconds
     oneStep(stepIndex).DelayTime = handles.protocol.delayTime(stepIndex);
     %red light
@@ -441,25 +442,34 @@ for stepIndex = 1:length(handles.protocol.stepNum)
     
     if oneStep(stepIndex).RedIntensity > 0       
         for index = 1:oneStep(stepIndex).RedIteration
-            numPntOn = oneStep(stepIndex).RedPulsePeriod*oneStep(stepIndex).RedPulseNum;
-            Yr(RedOnStartPnt:RedOnStartPnt+numPntOn-1) = ones(numPntOn,1).*powerR;
-            RedOnStartPnt = RedOnStartPnt + numPntOn + oneStep(stepIndex).RedOffTime-1;
+            for indexP = 1: oneStep(stepIndex).RedPulseNum
+                numPntOn = oneStep(stepIndex).RedPulseWidth;
+                Yr(RedOnStartPnt:RedOnStartPnt+numPntOn-1) = ones(numPntOn,1).*powerR;
+                RedOnStartPnt = RedOnStartPnt + oneStep(stepIndex).RedPulsePeriod-1;
+            end
+            RedOnStartPnt = RedOnStartPnt + oneStep(stepIndex).RedOffTime-1;
         end
     end
     
     if oneStep(stepIndex).GrnIntensity > 0
         for index = 1:oneStep(stepIndex).GrnIteration
-            numPntOn = oneStep(stepIndex).GrnPulsePeriod*oneStep(stepIndex).GrnPulseNum;
-            Yg(GrnOnStartPnt:GrnOnStartPnt+numPntOn-1) = ones(numPntOn,1).*powerG;
-            GrnOnStartPnt = GrnOnStartPnt + numPntOn + oneStep(stepIndex).GrnOffTime-1;
+            for indexP = 1: oneStep(stepIndex).GrnPulseNum
+                numPntOn = oneStep(stepIndex).GrnPulseWidth;
+                Yg(GrnOnStartPnt:GrnOnStartPnt+numPntOn-1) = ones(numPntOn,1).*powerG;
+                GrnOnStartPnt = GrnOnStartPnt + oneStep(stepIndex).GrnPulsePeriod-1;
+            end
+            GrnOnStartPnt = GrnOnStartPnt + oneStep(stepIndex).GrnOffTime-1;
         end
     end
     
     if oneStep(stepIndex).BluIntensity > 0
         for index = 1:oneStep(stepIndex).BluIteration
-            numPntOn = oneStep(stepIndex).BluPulsePeriod*oneStep(stepIndex).BluPulseNum;
-            Yb(BluOnStartPnt:BluOnStartPnt+numPntOn-1) = ones(numPntOn,1).*powerB;
-            BluOnStartPnt = BluOnStartPnt + numPntOn + oneStep(stepIndex).BluOffTime-1;
+            for indexP = 1: oneStep(stepIndex).GrnPulseNum
+                numPntOn = oneStep(stepIndex).BluPulseWidth;
+                Yb(BluOnStartPnt:BluOnStartPnt+numPntOn-1) = ones(numPntOn,1).*powerB;
+                BluOnStartPnt = BluOnStartPnt + oneStep(stepIndex).BluPulsePeriod-1;
+            end
+            BluOnStartPnt = BluOnStartPnt + oneStep(stepIndex).BluOffTime-1;
         end
     end
 
@@ -504,19 +514,26 @@ guidata(hObject, handles);
 %remove all experiment steps
 handles.hComm.LEDCtrl.removeAllExperimentSteps();
 
-%add new experiment days
+%add new experiment steps
 try
     for stepIndex = 1:length(handles.protocol.stepNum)
         totalSteps = handles.hComm.LEDCtrl.addOneStep(oneStep(stepIndex));
     end
     
-    expData = handles.hComm.LEDCtrl.getExperimentSteps();
-    disp(expData);
+    if totalSteps == length(handles.protocol.stepNum)
+        expData = handles.hComm.LEDCtrl.getExperimentSteps();
+        disp(expData);
+    else
+        errID = 'LEDController:UploadProtocolError';
+        msgtext = 'The LED protocol upload failed.';
+        
+        ME = MException(errID,msgtext);
+        throw(ME);
+    end
     
 catch ME
-    errorMessage = sprintf('Error in function %s() at line %d.\n\nError Message:\n%s', ...
-        ME.stack(end).name, ME.stack(end).line, ME.message);
-    fprintf(1, '%s\n', errorMessage);
+    errorMessage = sprintf('Error in uploading LED protocol.\n %s\n', ...
+        ME.message);
     uiwait(warndlg(errorMessage));
     set(handles.run_exp,'enable', 'off');
 end
